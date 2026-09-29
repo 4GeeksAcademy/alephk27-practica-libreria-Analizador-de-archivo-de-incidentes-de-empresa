@@ -1,0 +1,51 @@
+isbn,titulo,genero,precio,stock,status
+9780000000002,La ciudad de cristal,Novela,9.99,12,disponible
+9780000000019,El jardin secreto,Infantil,11.49,8,disponible
+9780000000026,  ,Aventura,12.99,5,disponible
+9780000000033,Sombras de invierno,Misterio,14.49,0,agotado
+9780000000040,Cartas desde la luna,Ciencia ficcion,15.99,14,disponible
+9780000000057,El ultimo faro,Drama,17.49,3,disponible
+9780000000064,La ruta del viento,Aventura,-18.99,7,disponible
+9780000000071,Pequenas historias del bosque,Infantil,20.49,0,agotado
+9780000000088,Manual de astronomia,Ciencia,21.99,9,disponible
+9780000000095,El reloj de arena,Fantasia,23.49,11,disponible
+9780000000101,Memorias de un viajero,Biografia,24.99,4,disponible
+9780000000118,La casa junto al rio,Novela,26.49,6,disponible
+9780000000125,Cocina para todos,Cocina,27.99,15,disponible
+9780000000132,Atlas de mundos perdidos,Fantasia,29.49,2,disponible
+9780000000149,El caso del cuadro azul,Misterio,30.99,0,agotado
+9780000000156,Introduccion a la botanica,Ciencia,9.99,10,disponible
+9780000000163,El mapa invisible,Aventura,11.49,13,disponible
+9780000000170,Cuentos para la noche,Infantil,12.99,5,disponible
+9780000000187,Historia de una biblioteca,Historia,14.49,8,disponible
+9780000000194,La musica del silencio,Drama,15.99,1,disponible
+9780000000200,Robot de papel,Ciencia ficcion,17.49,6,disponible
+9780000000217,Recetas del campo,Cocina,18.99,0,garantía
+9780000000224,El puente de las estrellas,Fantasia,20.49,17,disponible
+9780000000231,La llave antigua,Misterio,21.99,3,disponible
+9780000000248,Cuaderno de viajes,Viajes,23.49,9,disponible
+9780000000255,Aprender a dibujar,Arte,24.99,12,disponible
+9780000000262,El secreto del valle,Aventura,26.49,4,disponible
+9780000000279,Pequeno laboratorio,Ciencia,27.99,7,disponible
+9780000000286,Diario de una exploradora,Biografia,29.49,0,agotado
+9780000000293,La ultima estacion,Novela,30.99,10,disponible
+9780000000309,Planetas cercanos,Ciencia ficcion,9.99,2,disponible
+9780000000316,El bosque de los ecos,Fantasia,11.49,6,disponible
+9780000000323,Historias de la antigua Roma,Historia,12.99,11,disponible
+9780000000330,El retrato perdido,Misterio,14.49,5,disponible
+9780000000347,Paseos por la montana,Viajes,15.99,14,disponible
+9780000000354,Figuras y colores,Arte,17.49,0,agotado
+9780000000361,La isla escondida,Aventura,18.99,8,disponible
+9780000000378,Pequenos inventores,Infantil,20.49,3,disponible
+9780000000385,Guia de plantas urbanas,Ciencia,21.99,9,disponible
+9780000000392,Un invierno diferente,Novela,23.49,1,disponible
+9780000000408,El ultimo astronauta,Ciencia ficcion,24.99,16,disponible
+9780000000415,Sabores de casa,Cocina,26.49,7,disponible
+9780000000422,La puerta del norte,Fantasia,27.99,4,disponible
+9780000000439,Crimen en el museo,Misterio,29.49,0,agotado
+9780000000446,La vida de Ada,Biografia,30.99,13,disponible
+9780000000453,Oceanos profundos,Ciencia,9.99,6,disponible
+9780000000460,El tren de medianoche,Drama,11.49,2,disponible
+9780000000477,Un mundo en miniatura,Infantil,12.99,5,disponible
+9780000000484,La expedicion perdida,Aventura,14.49,10,disponible
+9780000000491,Relatos del viejo puerto,Novela,15.99,3,disponible

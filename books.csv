@@ -1,7 +1,7 @@
 isbn,titulo,genero,precio,stock,status
 9780000000002,La ciudad de cristal,Novela,9.99,12,disponible
 9780000000019,El jardin secreto,Infantil,11.49,8,disponible
-9780000000026,  ,Aventura,12.99,5,disponible
+9780000000026, El camino del mar  ,Aventura,12.99,5,disponible
 9780000000033,Sombras de invierno,Misterio,14.49,0,agotado
 9780000000040,Cartas desde la luna,Ciencia ficcion,15.99,14,disponible
 9780000000057,El ultimo faro,Drama,17.49,3,disponible
@@ -20,7 +20,7 @@ isbn,titulo,genero,precio,stock,status
 9780000000187,Historia de una biblioteca,Historia,14.49,8,disponible
 9780000000194,La musica del silencio,Drama,15.99,1,disponible
 9780000000200,Robot de papel,Ciencia ficcion,17.49,6,disponible
-9780000000217,Recetas del campo,Cocina,18.99,0,garantía
+9780000000217,Recetas del campo,Cocina,18.99,0, agotado
 9780000000224,El puente de las estrellas,Fantasia,20.49,17,disponible
 9780000000231,La llave antigua,Misterio,21.99,3,disponible
 9780000000248,Cuaderno de viajes,Viajes,23.49,9,disponible
@@ -43,7 +43,7 @@ isbn,titulo,genero,precio,stock,status
 9780000000415,Sabores de casa,Cocina,26.49,7,disponible
 9780000000422,La puerta del norte,Fantasia,27.99,4,disponible
 9780000000439,Crimen en el museo,Misterio,29.49,0,agotado
-9780000000446,La vida de Ada,Biografia,30.99,13,disponible
+9780000000446,La vida de Ada,rems,30.99,13,disponible
 9780000000453,Oceanos profundos,Ciencia,9.99,6,disponible
 9780000000460,El tren de medianoche,Drama,11.49,2,disponible
 9780000000477,Un mundo en miniatura,Infantil,12.99,5,disponible

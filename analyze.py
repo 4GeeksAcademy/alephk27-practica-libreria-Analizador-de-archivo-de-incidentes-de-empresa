@@ -74,10 +74,7 @@ def calculate_inventory_value(books):
     return total
 
 
-def analyze_books(csv_path):
-    with open(csv_path, mode="r", newline="", encoding="utf-8") as csv_file:
-        books = list(csv.DictReader(csv_file))
-
+def summarize_books(books):
     valid_books, validation_errors = validate_books(books)
     inventory_value = calculate_inventory_value(books)
     missing_titles = 0
@@ -92,21 +89,86 @@ def analyze_books(csv_path):
         genres[(book.get("genero") or "").strip() or "Sin genero"] += 1
         statuses[(book.get("status") or "").strip() or "Sin status"] += 1
 
-    print(f"Total de libros: {len(books)}")
-    print(f"Registros validos: {len(valid_books)}")
-    print(f"Registros con errores: {len(validation_errors)}")
-    if validation_errors:
-        print("Errores de validacion:")
-        for error in validation_errors:
-            print(f"  Fila {error['fila']}: {'; '.join(error['motivos'])}")
-    print(f"Valor total del inventario: {inventory_value:.2f}")
-    print(f"Titulos faltantes: {missing_titles}")
-    print("Distribucion por genero:")
-    for genre, count in sorted(genres.items()):
+    results = {
+        "total_books": len(books),
+        "valid_books": len(valid_books),
+        "validation_errors": validation_errors,
+        "inventory_value": f"{inventory_value:.2f}",
+        "missing_titles": missing_titles,
+        "genres": genres,
+        "statuses": statuses,
+    }
+    return results
+
+
+def analyze_books(csv_path):
+    with open(csv_path, mode="r", newline="", encoding="utf-8") as csv_file:
+        books = list(csv.DictReader(csv_file))
+
+    results = summarize_books(books)
+    print_summary(results)
+    return results
+
+
+def print_summary(results):
+    separator = "=" * 52
+    section_separator = "-" * 52
+
+    print(separator)
+    print("RESUMEN DE LIBROS")
+    print(separator)
+    print(f"Total de libros:             {results['total_books']}")
+    print(f"Registros validos:           {results['valid_books']}")
+    print(f"Registros con errores:       {len(results['validation_errors'])}")
+    print(f"Valor total del inventario:  {results['inventory_value']}")
+    print(f"Titulos faltantes:           {results['missing_titles']}")
+
+    print(section_separator)
+    print("DISTRIBUCION POR GENERO")
+    for genre, count in sorted(results["genres"].items()):
         print(f"  {genre}: {count}")
-    print("Distribucion por status:")
-    for status, count in sorted(statuses.items()):
+
+    print(section_separator)
+    print("DISTRIBUCION POR STATUS")
+    for status, count in sorted(results["statuses"].items()):
         print(f"  {status}: {count}")
+
+    print(section_separator)
+    print("ERRORES DE VALIDACION")
+    if results["validation_errors"]:
+        for error in results["validation_errors"]:
+            reasons = "; ".join(error["motivos"])
+            print(f"  Fila {error['fila']}: {reasons}")
+    else:
+        print("  Sin errores")
+    print(separator)
+
+
+def write_results_csv(results, csv_file):
+    writer = csv.writer(csv_file)
+    writer.writerow(["seccion", "elemento", "valor"])
+    writer.writerows(
+        [
+            ["resumen", "total_libros", results["total_books"]],
+            ["resumen", "registros_validos", results["valid_books"]],
+            ["resumen", "registros_con_errores", len(results["validation_errors"])],
+            ["resumen", "valor_total_inventario", results["inventory_value"]],
+            ["resumen", "titulos_faltantes", results["missing_titles"]],
+        ]
+    )
+    for genre, count in sorted(results["genres"].items()):
+        writer.writerow(["genero", genre, count])
+    for status, count in sorted(results["statuses"].items()):
+        writer.writerow(["status", status, count])
+    for error in results["validation_errors"]:
+        writer.writerow(
+            ["error_validacion", f"fila_{error['fila']}", "; ".join(error["motivos"])]
+        )
+
+
+def export_results(results, output_path):
+    with open(output_path, mode="w", newline="", encoding="utf-8") as csv_file:
+        write_results_csv(results, csv_file)
 
 
 def main():
@@ -121,9 +183,15 @@ def main():
     args = parser.parse_args()
 
     try:
-        analyze_books(args.csv_path)
+        results = analyze_books(args.csv_path)
     except FileNotFoundError:
         parser.error(f"no se encontro el archivo: {args.csv_path}")
+
+    answer = input("exportar resultados a CSV?[S/N] ").strip().casefold()
+    if answer == "s":
+        output_path = Path(__file__).with_name("results.csv")
+        export_results(results, output_path)
+        print(f"Resultados exportados a: {output_path}")
 
 
 if __name__ == "__main__":

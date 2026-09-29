@@ -1,0 +1,24 @@
+seccion,elemento,valor
+resumen,total_libros,50
+resumen,registros_validos,48
+resumen,registros_con_errores,2
+resumen,valor_total_inventario,6106.38
+resumen,titulos_faltantes,0
+genero,Arte,2
+genero,Aventura,6
+genero,Biografia,2
+genero,Ciencia,5
+genero,Ciencia ficcion,4
+genero,Cocina,3
+genero,Drama,3
+genero,Fantasia,5
+genero,Historia,2
+genero,Infantil,5
+genero,Misterio,5
+genero,Novela,5
+genero,Viajes,2
+genero,rems,1
+status,agotado,7
+status,disponible,43
+error_validacion,fila_8,precio debe ser un numero mayor o igual a 0
+error_validacion,fila_46,genero no permitido: rems

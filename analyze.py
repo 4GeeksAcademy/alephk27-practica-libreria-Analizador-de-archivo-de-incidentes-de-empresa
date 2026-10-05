@@ -55,7 +55,7 @@ def validate_books(books):
             row_errors.append(f"status no permitido: {book.get('status')}")
 
         if row_errors:
-            errors.append({"fila": row_number, "motivos": row_errors})
+            errors.append({"fila": row_number, "motivos": row_errors, "registro": book})
         else:
             valid_books.append(book)
 
@@ -77,6 +77,12 @@ def calculate_inventory_value(books):
 def summarize_books(books):
     valid_books, validation_errors = validate_books(books)
     inventory_value = calculate_inventory_value(books)
+    average_price = (
+        sum((Decimal(book["precio"]) for book in valid_books), Decimal("0"))
+        / len(valid_books)
+        if valid_books
+        else Decimal("0")
+    )
     missing_titles = 0
     genres = Counter()
     statuses = Counter()
@@ -94,6 +100,7 @@ def summarize_books(books):
         "valid_books": len(valid_books),
         "validation_errors": validation_errors,
         "inventory_value": f"{inventory_value:.2f}",
+        "average_price": f"{average_price:.2f}",
         "missing_titles": missing_titles,
         "genres": genres,
         "statuses": statuses,
